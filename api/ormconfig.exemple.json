@@ -1,0 +1,33 @@
+[
+  {
+    "name": "default",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "database": "gobarber",
+    "username": "admin",
+    "password": "password",
+    "entities": [
+      "./dist/modules/**/infra/typeorm/entities/*.ts"
+    ],
+    "migrations": [
+      "./dist/shared/infra/typeorm/migrations/*.ts"
+    ],
+    "cli": {
+      "migrationsDir": "./dist/shared/infra/typeorm/migrations"
+    }
+  },
+  {
+    "name": "mongo",
+    "type": "mongodb",
+    "host": "localhost",
+    "port": 27017,
+    "database": "gobarger",
+    "username": "admin",
+    "password": "password",
+    "useUnifiedTopology": true,
+    "entities": [
+      "./dist/modules/**/infra/typeorm/schemas/*.ts"
+    ]
+  }
+]
