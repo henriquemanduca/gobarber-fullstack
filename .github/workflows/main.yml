@@ -27,15 +27,16 @@ jobs:
         run: npm run build
         
       # Copiar pasta dist para dentro do server
-      - name: Copy dist to server
-        uses: appleboy/scp-action@master
+      - name: Copy dist to server        
+        uses: appleboy/scp-action@master        
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
+          working-directory: ./api/
           source: "."
-          target: "~/apps/gobarber-fullstack/api/dist"
+          target: "~/apps/gobarber-fullstack/api/"
          
       # Substituir o código da pasta dist pelo novo
       # Executar npm install no server
