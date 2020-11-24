@@ -35,7 +35,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
           working-directory: ./api/
-          source: "."
+          source: ".,!node_modules"
           target: "~/apps/gobarber-fullstack/api/"
          
       # Substituir o código da pasta dist pelo novo
