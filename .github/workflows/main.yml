@@ -34,8 +34,8 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
-          source: "dist"
-          target: "/apps/gobarber-fullstack/api/dist"
+          source: "."
+          target: "~/apps/gobarber-fullstack/api/dist"
          
       # Substituir o código da pasta dist pelo novo
       # Executar npm install no server
