@@ -18,13 +18,12 @@ jobs:
           
       # Instalar dependencias
       - name: Install dependencies
-        run: npm install
-        
-      - name: Install dependencies DEV
-        run: npm install --only=dev
+        working-directory: ./api/
+        run: npm install        
           
       # Executar build        
       - name: Run build
+        working-directory: ./api/
         run: npm run build
         
       # Copiar pasta dist para dentro do server
