@@ -36,7 +36,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           working-directory: ./api/
           source: ".,!node_modules"
-          target: "~/apps/gobarber-fullstack/api/"
+          target: "~/apps/gobarber-fullstack/"
           
       # Executar migrations
       - name: Run migrations        
