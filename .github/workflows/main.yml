@@ -37,9 +37,18 @@ jobs:
           working-directory: ./api/
           source: ".,!node_modules"
           target: "~/apps/gobarber-fullstack/api/"
-         
-      # Substituir o código da pasta dist pelo novo
-      # Executar npm install no server
+          
       # Executar migrations
-      # Restart no servidor
-      
+      - name: Run migrations        
+        uses: appleboy/ssh-action@master        
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_KEY }}
+          working-directory: ./api/
+          script: |
+            npm install
+            npm install --only=dev
+            ./node_modules/.bin/typeorm migration:run
+            pm2 restart gobarber-api  
