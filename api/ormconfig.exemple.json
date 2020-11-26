@@ -22,7 +22,7 @@
     "type": "mongodb",
     "host": "localhost",
     "port": 27017,
-    "database": "gobarger",
+    "database": "gobarber",
     "username": "admin",
     "password": "password",
     "useUnifiedTopology": true,
