@@ -92,6 +92,7 @@ $ docker-compose -f dc-mongo.yml -p mongo up -d
 $ docker-compose -f dc-redis.yml -p redis up -d
 
 # Once the services are running, run the migrations
+# Sometimes it is necessary to enabled/install the 'uuid-ossp' extension in the database.
 $ npm run typeorm migration:run
 
 # Run the api service

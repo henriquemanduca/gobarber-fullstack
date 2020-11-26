@@ -5,7 +5,7 @@
     "host": "localhost",
     "port": 5432,
     "database": "gobarber",
-    "username": "admin",
+    "username": "postgres",
     "password": "password",
     "entities": [
       "./dist/modules/**/infra/typeorm/entities/*.ts"
